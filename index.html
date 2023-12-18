@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPPORT 2 Data Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            background-image: radial-gradient(#000000 1px, transparent 1px), radial-gradient(#000000 1px, transparent 1px);
+            background-position: 0 0, 25px 25px;
+            background-size: 50px 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1, h2 {
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .graph {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .github-logo {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
+            background-size: cover;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>SUPPORT 2 Data Analysis</h1>
+        <br>
+        <div class="btn-group-vertical">
+            <button class="btn btn-primary" onclick="redirectTo('page1.html')">Initial Data Quality Assessment</button>
+            <button class="btn btn-primary" onclick="redirectTo('page1_1.html')">Exploratory Data Analysis</button>
+            <button class="btn btn-primary" onclick="redirectTo('page2.html')">Visualisations</button>
+            <button class="btn btn-primary" onclick="redirectTo('page3.html')">Inferential Statistics: Chi-Square Test</button>
+            <button class="btn btn-primary" onclick="redirectTo('page4.html')">Regression Analysis</button>
+            <button class="btn btn-primary" onclick="redirectTo('page5.html')">Demographic Analysis</button>
+            <button class="btn btn-primary" onclick="redirectTo('page6.html')">Disease Severity</button>
+            <button class="btn btn-primary" onclick="redirectTo('page7.html')">Survival Rates</button>
+            <button class="btn btn-primary" onclick="redirectTo('page8.html')">Financial Impact</button>
+            <button class="btn btn-primary" onclick="redirectTo('page9.html')">Comorbidity Analysis</button>
+            <button class="btn btn-primary" onclick="redirectTo('page10.html')">Physiological Measures</button>
+            <button class="btn btn-primary" onclick="redirectTo('page11.html')">Impact of Education and Income</button>
+            <button class="btn btn-primary" onclick="redirectTo('page12.html')">Conclusion</button>
+        </div>
+        <a class="btn btn-success" href="https://github.com/Spartan-119/US_crime_statistics">
+            <span class="github-logo"></span>
+            Click here to view the GitHub Repository containing the Jupyter notebook.
+        </a>
+    </div>
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+
+</html>
