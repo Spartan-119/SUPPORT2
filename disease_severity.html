@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Disease Severity Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content {
+            margin-top: 50px;
+            text-align: justify;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .center-images {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .center-images img {
+            max-width: 48%;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Disease Severity Analysis</h1>
+
+        <section id="prevalenceOfDiseases">
+            <h2>1. Which disease categories (dzgroup and dzclass) are most prevalent in the dataset?</h2>
+            <div class="center-images">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/disease_1.png"
+                    alt="Prevalence of Diseases - Image 1">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/disease_2.png"
+                    alt="Prevalence of Diseases - Image 2">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Severity of Diseases:</h3>
+                <ul>
+                    <li><strong>Highest Prevalence of ARF/MOSF with Sepsis:</strong>
+                        <ul>
+                            <li>Acute Renal Failure/Multiple Organ System Failure with Sepsis (ARF/MOSF w/Sepsis) is
+                                the most prevalent condition among the diseases displayed, indicating it is a common
+                                cause of critical illness within the observed cohort.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Lower Prevalence of Coma and Cirrhosis:</strong>
+                        <ul>
+                            <li>Conditions such as coma and cirrhosis are less frequently represented in this patient
+                                population compared to other categories. This could suggest that while serious, they may
+                                be less commonly encountered in this specific healthcare setting or that they have a
+                                lower incidence rate among critically ill patients in the dataset.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="correlationBetweenComorbiditiesAndDiseaseSeverity">
+            <h2>2. Is there a correlation between the number of comorbidities (num.co) and disease severity?</h2>
+            <div class="center-images">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/disease_3.png"
+                    alt="Correlation between Comorbidities and Disease Severity">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Correlation between comorbidity and Disease Severity:</h3>
+                <ul>
+                    <li><strong>Variation in Comorbidity Count Across Disease Categories:</strong>
+                        <ul>
+                            <li>There is a noticeable variation in the median number of comorbidities across different
+                                disease categories. The 'Coma' category has the lowest median number of comorbidities,
+                                suggesting that patients in this group may have fewer concurrent illnesses. In contrast,
+                                categories like 'COPD/CHF/Cirrhosis' and 'ARF/MOSF' have higher median comorbidities,
+                                indicating that patients with these conditions tend to have multiple health issues
+                                simultaneously.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Presence of Outliers in Comorbidity Distribution:</strong>
+                        <ul>
+                            <li>The boxplot for each disease category shows the presence of outliers, which are
+                                patients with a number of comorbidities that are significantly higher than the median.
+                                This suggests that within each disease category, there are individual patients who have
+                                a particularly high burden of concurrent illnesses, which could imply more complex
+                                medical needs and potential challenges in their management.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
