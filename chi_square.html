@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi-Square Test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .content {
+            margin-top: 50px;
+            text-align: justify;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .center-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.center-image img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chi-Square Test</h1>
+        
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <p>In the dataset under consideration, numerical columns encompass a range of health-related metrics, including age, mortality status, hospitalization and death indicators, length of hospital stay, survival time, number of co-morbidities, and various physiological parameters such as mean blood pressure, heart rate, and respiratory rate, among others. Additionally, categorical columns capture demographic and contextual information, featuring variables like sex, disease group, education level, and income. To facilitate statistical analysis, particularly the application of the Chi-square test, we aim to focus on specific pairs within the categorical columns.<br><br>
+                This targeted approach will provide valuable insights into the relationships and associations present in the dataset, allowing for a more nuanced understanding of the interplay between different variables and their impact on health outcomes. This methodical examination aligns with best practices in statistical analysis, ensuring a comprehensive exploration of the dataset's key dimensions.</p>
+        </section>
+
+        <section id="sexVsDZGroup">
+            <h2>1. Sex VS DZGroup</h2>
+            
+            <p>Contingency Table:</p>
+<table border="1">
+    <tr>
+        <th>dzgroup</th>
+        <th>ARF/MOSF w/Sepsis</th>
+        <th>CHF</th>
+        <th>COPD</th>
+        <th>Cirrhosis</th>
+        <th>Colon Cancer</th>
+        <th>Coma</th>
+        <th>Lung Cancer</th>
+        <th>MOSF w/Malig</th>
+    </tr>
+    <tr>
+        <td>female</td>
+        <td>1590</td>
+        <td>528</td>
+        <td>476</td>
+        <td>184</td>
+        <td>223</td>
+        <td>311</td>
+        <td>339</td>
+        <td>328</td>
+    </tr>
+    <tr>
+        <td>male</td>
+        <td>1923</td>
+        <td>859</td>
+        <td>491</td>
+        <td>324</td>
+        <td>289</td>
+        <td>285</td>
+        <td>569</td>
+        <td>384</td>
+    </tr>
+</table>
+
+
+            <p>Chi-Square Statistic: 78.90566716067954<br>
+            Degrees of Freedom: 7<br>
+            P-value: 2.302234755417934e-14</p>
+
+            <p>Expected Frequencies Table:</p>
+<table border="1">
+    <tr>
+        <th>dzgroup</th>
+        <th>ARF/MOSF w/Sepsis</th>
+        <th>CHF</th>
+        <th>COPD</th>
+        <th>Cirrhosis</th>
+        <th>Colon Cancer</th>
+        <th>Coma</th>
+        <th>Lung Cancer</th>
+        <th>MOSF w/Malig</th>
+    </tr>
+    <tr>
+        <td>female</td>
+        <td>1535.562672</td>
+        <td>606.269691</td>
+        <td>422.68406</td>
+        <td>222.051192</td>
+        <td>223.799626</td>
+        <td>260.516753</td>
+        <td>396.89465</td>
+        <td>311.221356</td>
+    </tr>
+    <tr>
+        <td>male</td>
+        <td>1977.437328</td>
+        <td>780.730309</td>
+        <td>544.31594</td>
+        <td>285.948808</td>
+        <td>288.200374</td>
+        <td>335.483247</td>
+        <td>511.10535</td>
+        <td>400.778644</td>
+    </tr>
+</table>
+<p>Significance Level (α): 0.05</p>
+
+            <p>Hypotheses:</p>
+            <ul>
+                <li>H0: There is no significant association between sex and dzgroup (They are independent).</li>
+                <li>H1: There is a significant association between sex and dzgroup (They are not independent).</li>
+            </ul>
+
+            <p><strong>Conclusion:</strong> <span style="background-color: yellow; color: black; font-size: 1.2em;">Since the P-Value is significantly less than 5%, we reject the null hypothesis. In other words, there is a significant association between sex and dzgroup.</span></p>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/chi_1.png" alt="Chi-Square Image">
+            </div>
+        </section>
+
+        <br><br>
+
+        <section id="raceVsDZGroup">
+            <h2>2. Race VS DZGroup</h2>
+            
+            <p>Contingency Table for Race and Disease Group:</p>
+<table border="1">
+    <tr>
+        <th>dzgroup</th>
+        <th>ARF/MOSF w/Sepsis</th>
+        <th>CHF</th>
+        <th>COPD</th>
+        <th>Cirrhosis</th>
+        <th>Colon Cancer</th>
+        <th>Coma</th>
+        <th>Lung Cancer</th>
+        <th>MOSF w/Malig</th>
+    </tr>
+    <tr>
+        <td>NA</td>
+        <td>15</td>
+        <td>2</td>
+        <td>4</td>
+        <td>2</td>
+        <td>4</td>
+        <td>4</td>
+        <td>3</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>asian</td>
+        <td>33</td>
+        <td>12</td>
+        <td>1</td>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+        <td>11</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>black</td>
+        <td>568</td>
+        <td>268</td>
+        <td>103</td>
+        <td>61</td>
+        <td>45</td>
+        <td>122</td>
+        <td>112</td>
+        <td>112</td>
+    </tr>
+    <tr>
+        <td>hispanic</td>
+        <td>123</td>
+        <td>54</td>
+        <td>20</td>
+        <td>29</td>
+        <td>19</td>
+        <td>14</td>
+        <td>12</td>
+        <td>19</td>
+    </tr>
+    <tr>
+        <td>other</td>
+        <td>40</td>
+        <td>17</td>
+        <td>5</td>
+        <td>8</td>
+        <td>8</td>
+        <td>7</td>
+        <td>9</td>
+        <td>18</td>
+    </tr>
+    <tr>
+        <td>white</td>
+        <td>2734</td>
+        <td>1034</td>
+        <td>834</td>
+        <td>403</td>
+        <td>431</td>
+        <td>444</td>
+        <td>761</td>
+        <td>548</td>
+    </tr>
+</table>
+
+        
+            <p>Chi-Square Statistic: 145.54921619124445<br>
+            Degrees of Freedom: 35<br>
+            P-value: 1.967490343784598e-15</p>
+        
+            <p>Expected Frequencies Table:</p>
+<table border="1">
+    <tr>
+        <th>dzgroup</th>
+        <th>ARF/MOSF w/Sepsis</th>
+        <th>CHF</th>
+        <th>COPD</th>
+        <th>Cirrhosis</th>
+        <th>Colon Cancer</th>
+        <th>Coma</th>
+        <th>Lung Cancer</th>
+        <th>MOSF w/Malig</th>
+    </tr>
+    <tr>
+        <td>NA</td>
+        <td>16.208503</td>
+        <td>6.399429</td>
+        <td>4.461606</td>
+        <td>2.343843</td>
+        <td>2.362298</td>
+        <td>2.749863</td>
+        <td>4.189388</td>
+        <td>3.285071</td>
+    </tr>
+    <tr>
+        <td>asian</td>
+        <td>30.487422</td>
+        <td>12.037021</td>
+        <td>8.392069</td>
+        <td>4.408656</td>
+        <td>4.443370</td>
+        <td>5.172361</td>
+        <td>7.880040</td>
+        <td>6.179062</td>
+    </tr>
+    <tr>
+        <td>black</td>
+        <td>536.810172</td>
+        <td>211.942986</td>
+        <td>147.764144</td>
+        <td>77.625838</td>
+        <td>78.237065</td>
+        <td>91.072833</td>
+        <td>138.748544</td>
+        <td>108.798418</td>
+    </tr>
+    <tr>
+        <td>hispanic</td>
+        <td>111.915852</td>
+        <td>44.186532</td>
+        <td>30.806328</td>
+        <td>16.183676</td>
+        <td>16.311106</td>
+        <td>18.987147</td>
+        <td>28.926727</td>
+        <td>22.682632</td>
+    </tr>
+    <tr>
+        <td>other</td>
+        <td>43.222674</td>
+        <td>17.065143</td>
+        <td>11.897616</td>
+        <td>6.250247</td>
+        <td>6.299462</td>
+        <td>7.332967</td>
+        <td>11.171702</td>
+        <td>8.760189</td>
+    </tr>
+    <tr>
+        <td>white</td>
+        <td>2774.355377</td>
+        <td>1095.368889</td>
+        <td>763.678238</td>
+        <td>401.187740</td>
+        <td>404.346699</td>
+        <td>470.684829</td>
+        <td>717.083599</td>
+        <td>562.294628</td>
+    </tr>
+</table>
+
+            <p>Significance Level (α): 0.05</p>
+        
+            <p>Hypotheses:</p>
+            <ul>
+                <li>H0: There is no significant association between race and dzgroup (They are independent).</li>
+                <li>H1: There is a significant association between race and dzgroup (They are not independent).</li>
+            </ul>
+        
+            <p><strong>Conclusion:</strong> <span style="background-color: yellow; color: black; font-size: 1.2em;">Since the P-Value is significantly less than 5%, we reject the null hypothesis. In other words, there is a significant association between race and dzgroup.</span></p>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/chi_2.png" alt="Chi-Square Image for Race VS DZGroup">
+            </div>
+        </section>
+        <br><br>
+        <section id="incomeVsDZGroup">
+            <h2>3. Income VS DZGroup</h2>
+            
+            <p>Contingency Table for Income and Disease Group:</p>
+            <table border="1">
+                <tr>
+                    <th>dzgroup</th>
+                    <th>ARF/MOSF w/Sepsis</th>
+                    <th>CHF</th>
+                    <th>COPD</th>
+                    <th>Cirrhosis</th>
+                    <th>Colon Cancer</th>
+                    <th>Coma</th>
+                    <th>Lung Cancer</th>
+                    <th>MOSF w/Malig</th>
+                </tr>
+                <tr>
+                    <td>$11-$25k</td>
+                    <td>579</td>
+                    <td>260</td>
+                    <td>155</td>
+                    <td>74</td>
+                    <td>85</td>
+                    <td>90</td>
+                    <td>171</td>
+                    <td>113</td>
+                </tr>
+                <tr>
+                    <td>$25-$50k</td>
+                    <td>406</td>
+                    <td>136</td>
+                    <td>57</td>
+                    <td>53</td>
+                    <td>84</td>
+                    <td>53</td>
+                    <td>151</td>
+                    <td>117</td>
+                </tr>
+                <tr>
+                    <td>&gt;$50k</td>
+                    <td>220</td>
+                    <td>88</td>
+                    <td>29</td>
+                    <td>40</td>
+                    <td>89</td>
+                    <td>42</td>
+                    <td>101</td>
+                    <td>74</td>
+                </tr>
+                <tr>
+                    <td>NA</td>
+                    <td>1222</td>
+                    <td>402</td>
+                    <td>284</td>
+                    <td>135</td>
+                    <td>182</td>
+                    <td>238</td>
+                    <td>289</td>
+                    <td>229</td>
+                </tr>
+                <tr>
+                    <td>under $11k</td>
+                    <td>1086</td>
+                    <td>501</td>
+                    <td>442</td>
+                    <td>206</td>
+                    <td>72</td>
+                    <td>173</td>
+                    <td>196</td>
+                    <td>179</td>
+                </tr>
+            </table>
+            
+        
+            <p>Chi-Square Statistic: 419.3203101674101<br>
+            Degrees of Freedom: 28<br>
+            P-value: 2.284720699218303e-71</p>
+        
+            <p>Expected Frequencies Table:</p>
+            <table border="1">
+                <tr>
+                    <th>dzgroup</th>
+                    <th>ARF/MOSF w/Sepsis</th>
+                    <th>CHF</th>
+                    <th>COPD</th>
+                    <th>Cirrhosis</th>
+                    <th>Colon Cancer</th>
+                    <th>Coma</th>
+                    <th>Lung Cancer</th>
+                    <th>MOSF w/Malig</th>
+                </tr>
+                <tr>
+                    <td>$11-$25k</td>
+                    <td>589.294848</td>
+                    <td>232.664946</td>
+                    <td>162.211249</td>
+                    <td>85.215423</td>
+                    <td>85.886411</td>
+                    <td>99.977150</td>
+                    <td>152.314182</td>
+                    <td>119.435790</td>
+                </tr>
+                <tr>
+                    <td>$25-$50k</td>
+                    <td>407.913984</td>
+                    <td>161.052290</td>
+                    <td>112.283753</td>
+                    <td>58.986708</td>
+                    <td>59.451170</td>
+                    <td>69.204878</td>
+                    <td>105.432934</td>
+                    <td>82.674283</td>
+                </tr>
+                <tr>
+                    <td>&gt;$50k</td>
+                    <td>263.581127</td>
+                    <td>104.066901</td>
+                    <td>72.554213</td>
+                    <td>38.115347</td>
+                    <td>38.415467</td>
+                    <td>44.718005</td>
+                    <td>68.127431</td>
+                    <td>53.421509</td>
+                </tr>
+                <tr>
+                    <td>NA</td>
+                    <td>1150.417774</td>
+                    <td>454.207075</td>
+                    <td>316.667802</td>
+                    <td>166.357025</td>
+                    <td>167.666923</td>
+                    <td>195.174778</td>
+                    <td>297.346809</td>
+                    <td>233.161815</td>
+                </tr>
+                <tr>
+                    <td>under $11k</td>
+                    <td>1101.792266</td>
+                    <td>435.008788</td>
+                    <td>303.282984</td>
+                    <td>159.325497</td>
+                    <td>160.580029</td>
+                    <td>186.925189</td>
+                    <td>284.778644</td>
+                    <td>223.306602</td>
+                </tr>
+            </table>
+            
+        
+            <p>Significance Level (α): 0.05</p>
+        
+            <p>Hypotheses:</p>
+            <ul>
+                <li>H0: There is no significant association between income and dzgroup (They are independent).</li>
+                <li>H1: There is a significant association between income and dzgroup (They are not independent).</li>
+            </ul>
+        
+            <p><strong>Conclusion:</strong> <span style="background-color: yellow; color: black; font-size: 1.2em;">Since the P-Value is significantly less than 5%, we reject the null hypothesis. In other words, there is a significant association between income and dzgroup.</span></p>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/chi_3.png" alt="Chi-Square Image for Income VS DZGroup">
+            </div>
+        </section>
+        
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
