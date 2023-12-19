@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Physiological Measures Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .content {
+            margin-top: 50px;
+            text-align: justify;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .center-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .center-image img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Physiological Measures Analysis</h1>
+        
+        <section id="physiologicalMeasures1">
+            <h2>1. Physiological Measures Distribution among Patients</h2>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/physiological_1.png" alt="Physiological Measures Image 1">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Physiological Measures Distribution among Patients:</h3>
+                <ul>
+                    <li><strong>Central Tendencies and Variability:</strong>
+                        <ul>
+                            <li>Histograms generally show the central tendency (such as the mean or median) and variability (spread) of data. If a histogram is bell-shaped and symmetrical, the clinical measurement in question is likely to have a normal distribution, with most values clustering around the mean. If the histogram is skewed to one side, it indicates that the data has a long tail in either the lower or higher range of values, which might suggest outliers or a non-uniform distribution.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Commonality of Measurement Values:</strong>
+                        <ul>
+                            <li>The height of the bars in a histogram indicates the frequency of occurrence of values within specific ranges. A high peak suggests that a particular range of values is common among the patient population, while lower bars indicate less common values. For instance, if a histogram of body temperature shows a high peak around 37°C (98.6°F), it indicates that most patients have a temperature within the normal range.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="physiologicalMeasures2">
+            <h2>2. Correlation between Physiological Measures and Survival Rates</h2>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/physiological_2.png" alt="Physiological Measures Image 2">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Correlation between Physiological Measures and Survival Rates:</h3>
+                <ul>
+                    <li><strong>Strong Correlation Between Survival Rates:</strong>
+                        <ul>
+                            <li>The survival rates at two months (surv2m) and six months (surv6m) are highly correlated with each other, as indicated by the correlation values close to 1. This suggests that if a patient survives the initial two months, there is a high likelihood they will also survive up to six months.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Low Correlation Between Physiological Measures and Survival Rates:</strong>
+                        <ul>
+                            <li>The physiological measures such as mean blood pressure (meanbp), white blood cell count (wblc), heart rate (hrt), respiration rate (resp), temperature (temp), and the partial arterial oxygen to fractional inspired oxygen ratio (pafi) have low to moderate correlations with survival rates. This indicates that no single measure strongly predicts survival, suggesting the complexity of critical care where multiple factors may interact to influence patient outcomes.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2."></script>
+</body>
+</html>
