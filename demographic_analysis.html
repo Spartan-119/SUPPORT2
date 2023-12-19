@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demographic Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content {
+            margin-top: 50px;
+            text-align: justify;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .center-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .center-image img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Demographic Analysis</h1>
+
+        <section id="ageVsCriticallyIllPatients">
+            <h2>1. What is the distribution of age among the critically ill patients?</h2>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/demographic_1.png"
+                    alt="Age Vs Critically Ill Patients Image">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Age Vs Critically Ill Patients:</h3>
+                <ul>
+                    <li><strong>Normal Distribution of Age:</strong>
+                        <ul>
+                            <li>The age distribution among critically ill patients appears to be approximately normally
+                                distributed, with the highest frequency of patients centered around the middle age
+                                range. This suggests that middle-aged individuals constitute the largest proportion of
+                                critically ill patients within the sampled population.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Lesser Frequency of Young and Elderly Patients:</strong>
+                        <ul>
+                            <li>The frequencies on the histogram taper off for both the younger and older age groups,
+                                indicating that there are fewer critically ill patients at the extremes of the age
+                                spectrum in the data sample. This could reflect a lower prevalence of critical illness
+                                among the very young and an underrepresentation of the elderly, or it could suggest
+                                age-related differences in the types of critical illness or healthcare utilization
+                                patterns.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="dataDistributionByRaceAndGender">
+            <h2>2. How is the dataset distributed across different races and genders?</h2>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/demographic_2.png"
+                    alt="Data Distribution based on Races and Genders Image">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Data Distribution based on Races and Genders:</h3>
+                <ul>
+                    <li><strong>Predominance of Certain Racial Groups:</strong>
+                        <ul>
+                            <li>The white racial group has the highest count among the categories presented, indicating
+                                that within this dataset, individuals identified as white constitute the largest
+                                proportion of the sample. This is followed by the black racial group, which has a
+                                notably lower count but is still significant.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Gender Distribution within Racial Groups:</strong>
+                        <ul>
+                            <li>Across all racial groups, the count of females is consistently higher than that of
+                                males. This trend is especially pronounced in the white and black racial groups. The
+                                disparity suggests that in this dataset, more females than males are represented or
+                                have been sampled across these racial groups.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
