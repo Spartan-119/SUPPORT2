@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survival Rates Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .content {
+            margin-top: 50px;
+            text-align: justify;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .center-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .center-image img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: #000;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Survival Rates Analysis</h1>
+        
+        <section id="overallSurvivalRates">
+            <h2>1. Overall 2-month and 6-month Survival Rates</h2>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/survival_1.png" alt="Survival Rates Image 1">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/survival_2.png" alt="Survival Rates Image 2">
+            </div>
+            <div class="highlight">
+                <br>
+                <strong>Overall 2-month Survival Rate:</strong> 63.59%<br>
+                <strong>Overall 6-month Survival Rate:</strong> 52.01%
+            </div>
+            <div>
+                <br>
+                <h3>Observations to understand overall survival rates across diseases or demographics:</h3>
+                <ul>
+                    <li><strong>Variation in Survival Rates by Disease:</strong>
+                        <ul>
+                            <li>The survival rates differ significantly across disease categories. Patients with cancer have the highest 2-month survival rate, which is just over 70%. In contrast, patients in the coma category show the lowest survival rate, which appears to be around 30%. This suggests that prognosis varies widely depending on the disease category, with some conditions associated with a higher likelihood of short-term survival than others.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Comparatively Lower Survival for Critical Conditions:</strong>
+                        <ul>
+                            <li>The conditions labeled as COPD/CHF/Cirrhosis and ARF/MOSF display intermediate survival rates between the higher rates seen in cancer patients and the lower rates associated with coma patients. This indicates that while these conditions are serious, patients with these diagnoses have a moderate likelihood of surviving at least two months following their critical illness.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
