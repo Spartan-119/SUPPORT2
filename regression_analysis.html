@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regression Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .content {
+            margin-top: 50px;
+            text-align: justify;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        .center-image {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .center-image img {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Regression Analysis</h1>
+        
+        <section id="ageVsDeathProbability">
+            <h2>1. Age vs Death Probability</h2>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/regression_1.png" alt="Age vs Death Probability Image">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Age Vs Death Probability:</h3>
+                <ul>
+                    <li><strong>Stabilization of Death Probability with Age:</strong>
+                        <ul>
+                            <li>The logistic regression curve indicates that the probability of death increases with age but appears to plateau as age approaches the higher end of the spectrum. Specifically, the probability of death becomes relatively constant for older age groups, suggesting that beyond a certain age, the incremental risk of death does not increase significantly with age.</li>
+                        </ul>
+                    </li>
+                    <li><strong>High Death Probability in Old Age:</strong>
+                        <ul>
+                            <li>The plot shows that the estimated death probability is very high for the older age groups, nearing certainty (probability of 1.0). This aligns with the expectation that the risk of death generally increases with age due to factors such as the higher likelihood of comorbidities, decreased physiological reserve, and the increased incidence of life-threatening illnesses in older populations.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ageVsDementiaProbability">
+            <h2>2. Age vs Dementia Probability</h2>
+            <div class="center-image">
+                <img src="https://raw.githubusercontent.com/Spartan-119/SUPPORT2/main/static/regression_2.png" alt="Age vs Dementia Probability Image">
+            </div>
+            <div>
+                <br>
+                <h3>Observations on Age Vs Dementia Probability:</h3>
+                <ul>
+                    <li><strong>Constant Probability Across Age Groups:</strong>
+                        <ul>
+                            <li>The logistic regression curve is relatively flat, indicating that, according to this model, the probability of developing dementia does not vary significantly with age. This suggests that within the population and age range studied, age alone is not a strong predictor of dementia, based on the data available and the model used.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Low Probability of Dementia Across All Ages:</strong>
+                        <ul>
+                            <li>The plot shows that the estimated probability of dementia is consistently low across all age groups, hovering around the same low value well below 0.5. This implies that, for the sample represented, the overall risk of dementia remains constant and low throughout the age spectrum, as depicted by the model.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
