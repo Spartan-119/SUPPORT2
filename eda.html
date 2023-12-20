@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exploratory Data Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .table-container {
+            overflow-x: auto;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+
+        .highlight {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        table, th, td {
+            border: 1px solid #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exploratory Data Analysis</h1>
+
+        <h2>Statistical Summary for Numeric Data</h2>
+
+        <!-- Table for Statistical Summary -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>count</th>
+                    <th>mean</th>
+                    <th>std</th>
+                    <th>min</th>
+                    <th>25%</th>
+                    <th>50%</th>
+                    <th>75%</th>
+                    <th>max</th>
+                    <th>unique</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>9105.0</td>
+                    <td>4553.0</td>
+                    <td>2628.531434090146</td>
+                    <td>1.0</td>
+                    <td>2277.0</td>
+                    <td>4553.0</td>
+                    <td>6829.0</td>
+                    <td>9105.0</td>
+                    <td>9105.0</td>
+                </tr>
+                <tr>
+                    <th>age</th>
+                    <td>9105.0</td>
+                    <td>62.65082292147173</td>
+                    <td>15.593709881714913</td>
+                    <td>18.04199</td>
+                    <td>52.797</td>
+                    <td>64.85699</td>
+                    <td>73.99896</td>
+                    <td>101.84796</td>
+                    <td>7323.0</td>
+                </tr>
+                <tr>
+                    <th>death</th>
+                    <td>9105.0</td>
+                    <td>0.6810543657331136</td>
+                    <td>0.46609352754114397</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <th>hospdead</th>
+                    <td>9105.0</td>
+                    <td>0.2591982427237781</td>
+                    <td>0.4382186724887765</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <th>slos</th>
+                    <td>9105.0</td>
+                    <td>17.863042284459087</td>
+                    <td>22.00644031623458</td>
+                    <td>3.0</td>
+                    <td>6.0</td>
+                    <td>11.0</td>
+                    <td>20.0</td>
+                    <td>343.0</td>
+                    <td>167.0</td>
+                </tr>
+                <tr>
+                    <th>d.time</th>
+                    <td>9105.0</td>
+                    <td>478.44986271279515</td>
+                    <td>560.3832724631374</td>
+                    <td>3.0</td>
+                    <td>26.0</td>
+                    <td>233.0</td>
+                    <td>761.0</td>
+                    <td>2029.0</td>
+                    <td>1724.0</td>
+                </tr>
+                <tr>
+                    <th>num.co</th>
+                    <td>9105.0</td>
+                    <td>1.8686436024162547</td>
+                    <td>1.3444091804320228</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>3.0</td>
+                    <td>8.0</td>
+                    <td>9.0</td>
+                </tr>
+                <tr>
+                    <th>edu</th>
+                    <td>7471.0</td>
+                    <td>2.585822758887996</td>
+                    <td>1.3792741552767552</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>4.0</td>
+                    <td>5.0</td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <th>scoma</th>
+                    <td>9104.0</td>
+                    <td>6.558490566037736</td>
+                    <td>4.670554419682773</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>5.0</td>
+                    <td>10.0</td>
+                    <td>17.0</td>
+                    <td>17.0</td>
+                </tr>
+                <tr>
+                    <th>charges</th>
+                    <td>8933.0</td>
+                    <td>36990.4441556896</td>
+                    <td>41517.95880137195</td>
+                    <td>1121.8722</td>
+                    <td>13493.0116</td>
+                    <td>24055.2672</td>
+                    <td>42665.7246</td>
+                    <td>230173.987</td>
+                    <td>8933.0</td>
+                </tr>
+                <tr>
+                    <th>totcst</th>
+                    <td>8217.0</td>
+                    <td>38329.52785090599</td>
+                    <td>43799.54552247235</td>
+                    <td>2241.4</td>
+                    <td>13561.9</td>
+                    <td>25560.33</td>
+                    <td>46360.54</td>
+                    <td>255305.19</td>
+                    <td>8217.0</td>
+                </tr>
+                <tr>
+                    <th>totmcst</th>
+                    <td>5630.0</td>
+                    <td>17399.34866220736</td>
+                    <td>20040.695656432074</td>
+                    <td>1413.0</td>
+                    <td>5683.0</td>
+                    <td>10329.5</td>
+                    <td>19377.0</td>
+                    <td>137245.1</td>
+                    <td>5630.0</td>
+                </tr>
+                <tr>
+                    <th>avtisst</th>
+                    <td>9023.0</td>
+                    <td>3.244538604883632</td>
+                    <td>2.444891847992404</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>3.0</td>
+                    <td>4.0</td>
+                    <td>10.0</td>
+                    <td>10.0</td>
+                </tr>
+                <tr>
+                    <th>sps</th>
+                    <td>9104.0</td>
+                    <td>27.86283185840708</td>
+                    <td>8.706840764109545</td>
+                    <td>0.0</td>
+                    <td>25.0</td>
+                    <td>30.0</td>
+                    <td>33.0</td>
+                    <td>80.0</td>
+                    <td>91.0</td>
+                </tr>
+                <tr>
+                    <th>aps</th>
+                    <td>9104.0</td>
+                    <td>27.48953753665689</td>
+                    <td>7.920207462572085</td>
+                    <td>0.0</td>
+                    <td>23.0</td>
+                    <td>29.0</td>
+                    <td>32.0</td>
+                    <td>83.0</td>
+                    <td>89.0</td>
+                </tr>
+                <tr>
+                    <th>surv2m</th>
+                    <td>9104.0</td>
+                    <td>6.45877743902439</td>
+                    <td>4.699987622734007</td>
+                    <td>0.0</td>
+                    <td>2.0</td>
+                    <td>5.0</td>
+                    <td>9.0</td>
+                    <td>17.0</td>
+                    <td>17.0</td>
+                </tr>
+                <tr>
+                    <th>surv6m</th>
+                    <td>9104.0</td>
+                    <td>5.660994122602742</td>
+                    <td>4.594692522332897</td>
+                    <td>0.0</td>
+                    <td>2.0</td>
+                    <td>5.0</td>
+                    <td>9.0</td>
+                    <td>17.0</td>
+                    <td>17.0</td>
+                </tr>
+                <tr>
+                    <th>hday</th>
+                    <td>9104.0</td>
+                    <td>1.481800176056338</td>
+                    <td>0.7221477861691475</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>4.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <th>diabetes</th>
+                    <td>9104.0</td>
+                    <td>0.13453271028037383</td>
+                    <td>0.34154039295941964</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>dementia</td>
+                    <td>6780.0</td>
+                    <td>0.0973474801061008</td>
+                    <td>0.2967118614963561</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>prg2m</td>
+                    <td>7472.0</td>
+                    <td>0.397939026040721</td>
+                    <td>0.48954512735226064</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>prg6m</td>
+                    <td>9075.0</td>
+                    <td>0.4664159292035398</td>
+                    <td>0.4989209581646552</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>dnrday</td>
+                    <td>9104.0</td>
+                    <td>0.686338378677872</td>
+                    <td>1.2648195802424065</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>8.0</td>
+                    <td>34.0</td>
+                </tr>
+                <tr>
+                    <td>meanbp</td>
+                    <td>9104.0</td>
+                    <td>76.8532998760669</td>
+                    <td>11.086972809334308</td>
+                    <td>23.325</td>
+                    <td>69.6675</td>
+                    <td>76.875</td>
+                    <td>83.575</td>
+                    <td>120.075</td>
+                    <td>8522.0</td>
+                </tr>
+                <tr>
+                    <td>wblc</td>
+                    <td>8893.0</td>
+                    <td>12.415142172218787</td>
+                    <td>8.243430294252062</td>
+                    <td>0.9</td>
+                    <td>7.3</td>
+                    <td>10.9</td>
+                    <td>15.3</td>
+                    <td>109.5</td>
+                    <td>659.0</td>
+                </tr>
+                <tr>
+                    <td>hrt</td>
+                    <td>9104.0</td>
+                    <td>90.51544636922576</td>
+                    <td>22.018111354522943</td>
+                    <td>28.0</td>
+                    <td>75.0</td>
+                    <td>90.0</td>
+                    <td>105.0</td>
+                    <td>188.0</td>
+                    <td>105.0</td>
+                </tr>
+                <tr>
+                    <td>resp</td>
+                    <td>8893.0</td>
+                    <td>22.11633105536573</td>
+                    <td>7.501401263312568</td>
+                    <td>2.4</td>
+                    <td>16.8</td>
+                    <td>20.0</td>
+                    <td>25.6</td>
+                    <td>60.0</td>
+                    <td>225.0</td>
+                </tr>
+                <tr>
+                    <td>temp</td>
+                    <td>9104.0</td>
+                    <td>36.826499560906515</td>
+                    <td>0.7772671573966905</td>
+                    <td>34.3</td>
+                    <td>36.3</td>
+                    <td>36.8</td>
+                    <td>37.3</td>
+                    <td>39.2</td>
+                    <td>227.0</td>
+                </tr>
+                <tr>
+                    <td>pafi</td>
+                    <td>9104.0</td>
+                    <td>297.14783380515295</td>
+                    <td>92.3388033999562</td>
+                    <td>19.8</td>
+                    <td>230.9</td>
+                    <td>296.1</td>
+                    <td>360.9</td>
+                    <td>542.9</td>
+                    <td>4901.0</td>
+                </tr>
+                <tr>
+                    <td>alb</td>
+                    <td>9104.0</td>
+                    <td>3.288464866212094</td>
+                    <td>0.8779131388964318</td>
+                    <td>0.8</td>
+                    <td>2.7</td>
+                    <td>3.3</td>
+                    <td>3.9</td>
+                    <td>5.8</td>
+                    <td>2403.0</td>
+                </tr>
+                <tr>
+                    <td>bili</td>
+                    <td>9104.0</td>
+                    <td>1.3403487679897484</td>
+                    <td>1.7424054060189156</td>
+                    <td>0.2</td>
+                    <td>0.7</td>
+                    <td>0.8</td>
+                    <td>1.4</td>
+                    <td>25.6</td>
+                    <td>217.0</td>
+                </tr>
+                <tr>
+                    <td>crea</td>
+                    <td>9104.0</td>
+                    <td>1.3390125069712862</td>
+                    <td>0.8405368712048401</td>
+                    <td>0.3</td>
+                    <td>0.8</td>
+                    <td>1.1</td>
+                    <td>1.6</td>
+                    <td>10.1</td>
+                    <td>235.0</td>
+                </tr>
+                <tr>
+                    <td>sod</td>
+                    <td>6780.0</td>
+                    <td>139.8657596371882</td>
+                    <td>4.742718872935601</td>
+                    <td>110.0</td>
+                    <td>137.0</td>
+                    <td>140.0</td>
+                    <td>143.0</td>
+                    <td>166.0</td>
+                    <td>183.0</td>
+                </tr>
+                <tr>
+                    <td>ph</td>
+                    <td>5733.0</td>
+                    <td>7.380236260141875</td>
+                    <td>0.07409804106471372</td>
+                    <td>6.9</td>
+                    <td>7.35</td>
+                    <td>7.38</td>
+                    <td>7.43</td>
+                    <td>7.68</td>
+                    <td>111.0</td>
+                </tr>
+                <tr>
+                    <td>glucose</td>
+                    <td>9104.0</td>
+                    <td>114.0307247889264</td>
+                    <td>46.29871886107486</td>
+                    <td>16.0</td>
+                    <td>85.0</td>
+                    <td>107.0</td>
+                    <td>136.0</td>
+                    <td>287.0</td>
+                    <td>245.0</td>
+                </tr>
+                <tr>
+                    <td>bun</td>
+                    <td>9104.0</td>
+                    <td>22.463300885448915</td>
+                    <td>14.118098788264404</td>
+                    <td>4.0</td>
+                    <td>12.0</td>
+                    <td>18.0</td>
+                    <td>28.0</td>
+                    <td>135.0</td>
+                    <td>129.0</td>
+                </tr>
+                <tr>
+                    <td>urine</td>
+                    <td>9104.0</td>
+                    <td>991.2347321375614</td>
+                    <td>571.4559595516135</td>
+                    <td>114.0</td>
+                    <td>600.0</td>
+                    <td>900.0</td>
+                    <td>1300.0</td>
+                    <td>5800.0</td>
+                    <td>4309.0</td>
+                </tr>
+                <tr>
+                    <td>adlp</td>
+                    <td>6780.0</td>
+                    <td>5.767476439790576</td>
+                    <td>0.9077245731726877</td>
+                    <td>2.0</td>
+                    <td>5.0</td>
+                    <td>6.0</td>
+                    <td>6.0</td>
+                    <td>6.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>adls</td>
+                    <td>5733.0</td>
+                    <td>4.994409141362294</td>
+                    <td>1.6712878235785423</td>
+                    <td>0.0</td>
+                    <td>4.0</td>
+                    <td>5.0</td>
+                    <td>6.0</td>
+                    <td>6.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>adlsc</td>
+                    <td>9104.0</td>
+                    <td>4.569031305405222</td>
+                    <td>1.1001229714542272</td>
+                    <td>1.0</td>
+                    <td>4.0</td>
+                    <td>5.0</td>
+                    <td>5.0</td>
+                    <td>6.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>sex</td>
+                    <td>9104.0</td>
+                    <td>1.5821840881570392</td>
+                    <td>0.4931260754910039</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>2.0</td>
+                    <td>2.0</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>dzgroup</td>
+                    <td>9104.0</td>
+                    <td>2.6550567863327344</td>
+                    <td>0.9536753581894863</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>3.0</td>
+                    <td>3.0</td>
+                    <td>4.0</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>dzclass</td>
+                    <td>9104.0</td>
+                    <td>3.6045074059921953</td>
+                    <td>0.9488128532287313</td>
+                    <td>1.0</td>
+                    <td>3.0</td>
+                    <td>4.0</td>
+                    <td>4.0</td>
+                    <td>5.0</td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>income</td>
+                    <td>9104.0</td>
+                    <td>3.62829888252874</td>
+                    <td>0.8207249738334814</td>
+                    <td>1.0</td>
+                    <td>3.0</td>
+                    <td>4.0</td>
+                    <td>4.0</td>
+                    <td>5.0</td>
+                    <td>5.0</td>
+                </tr>
+                <tr>
+                    <td>race</td>
+                    <td>6780.0</td>
+                    <td>1.844785847299813</td>
+                    <td>0.7197517598574772</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>2.0</td>
+                    <td>2.0</td>
+                    <td>3.0</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>ca</td>
+                    <td>6780.0</td>
+                    <td>2.8427880184331805</td>
+                    <td>1.6314876328815253</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                    <td>3.0</td>
+                    <td>4.0</td>
+                    <td>6.0</td>
+                    <td>6.0</td>
+                </tr>
+                <tr>
+                    <td>dnr</td>
+                    <td>6780.0</td>
+                    <td>0.03811236749116608</td>
+                    <td>0.19199822117799634</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>1.0</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>sfdm2</td>
+                    <td>9104.0</td>
+                    <td>0.09607900440437661</td>
+                    <td>0.3693643705716886</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>2.0</td>
+                    <td>2.0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Table for Statistical Summary for Object Data -->
+<div class="container">
+    <h2>Statistical Summary for Object Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th></th>
+                <th>count</th>
+                <th>unique</th>
+                <th>top</th>
+                <th>freq</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>sex</td>
+                <td>9105</td>
+                <td>2</td>
+                <td>male</td>
+                <td>5125</td>
+            </tr>
+            <tr>
+                <td>dzgroup</td>
+                <td>9105</td>
+                <td>8</td>
+                <td>ARF/MOSF w/Sepsis</td>
+                <td>3515</td>
+            </tr>
+            <tr>
+                <td>dzclass</td>
+                <td>9105</td>
+                <td>4</td>
+                <td>ARF/MOSF</td>
+                <td>4227</td>
+            </tr>
+            <tr>
+                <td>income</td>
+                <td>6123</td>
+                <td>4</td>
+                <td>under $11k</td>
+                <td>2855</td>
+            </tr>
+            <tr>
+                <td>race</td>
+                <td>9063</td>
+                <td>5</td>
+                <td>white</td>
+                <td>7191</td>
+            </tr>
+            <tr>
+                <td>ca</td>
+                <td>9105</td>
+                <td>3</td>
+                <td>no</td>
+                <td>5995</td>
+            </tr>
+            <tr>
+                <td>dnr</td>
+                <td>9075</td>
+                <td>3</td>
+                <td>no dnr</td>
+                <td>5880</td>
+            </tr>
+            <tr>
+                <td>sfdm2</td>
+                <td>7705</td>
+                <td>5</td>
+                <td>&lt;2 mo. follow-up</td>
+                <td>3123</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <!-- Highlighted Message -->
+<div class="highlight" style="background-color: yellow; color: black; font-size: 24px;">
+    The total percentage of missing values is: 10.78%
+</div>
+
+<!-- Insights Section -->
+<div id="insights">
+    <h3>Insights</h3>
+    <ol>
+        <li><strong>Data Completeness and Missing Values:</strong>
+            <ul>
+                <li>The dataset has a considerable amount of missing data, with the total percentage of missing values being 10.78%. Certain columns like `adlp`, `urine`, `glucose`, and `bun` have more than 45% data missing. This high level of missing data can impact the reliability and accuracy of any analysis performed on the dataset.</li>
+            </ul>
+        </li>
+        <li><strong>Variable Types and Diversity:</strong>
+            <ul>
+                <li>The dataset includes a mix of numerical (both integer and float) and categorical (object type) data. Variables like `age`, `scoma`, and `charges` are continuous, whereas `sex`, `dzgroup`, and `race` are categorical. The diversity in data types indicates a rich dataset that can be used for varied analyses.</li>
+            </ul>
+        </li>
+        <li><strong>Statistical Summary of Numeric Data:</strong>
+            <ul>
+                <li>The numeric variables exhibit a wide range of values. For example, `age` ranges from approximately 18 to 102 years, indicating a diverse age group in the sample. Variables like `charges` and `totcst` (total cost) have a very high standard deviation, suggesting significant variability in hospital charges and total costs among the patients.</li>
+            </ul>
+        </li>
+        <li><strong>Outliers in the Data:</strong>
+            <ul>
+                <li>Several columns contain outliers, which are values significantly different from others in the dataset. For instance, `scoma` (coma score) has 21.47% of its values as outliers, and `charges` has 10.02% outliers. These outliers could be due to extreme cases or errors in data collection.</li>
+            </ul>
+        </li>
+        <li><strong>Categorical Data Overview:</strong>
+            <ul>
+                <li>The categorical data shows a variety of top categories. For example, the most frequent `sex` is male (56.3%), the most common disease group (`dzgroup`) is ARF/MOSF w/Sepsis, and the majority of patients are classified as white in race. This information can be crucial for understanding the demographics of the dataset.</li>
+            </ul>
+        </li>
+        <li><strong>Hospital-Related Information:</strong>
+            <ul>
+                <li>Variables like `hospdead` (hospital death), `slos` (length of stay), and `hday` (hospital day) provide insights into the hospitalization aspects. The `slos` variable, for example, ranges from 3 to 343 days, indicating varied lengths of hospital stays.</li>
+            </ul>
+        </li>
+        <li><strong>Health Conditions and Outcomes:</strong>
+            <ul>
+                <li>The dataset includes several variables related to patients` health conditions (like `diabetes`, `dementia`) and outcomes (`surv2m` - survival after 2 months, `hospdead`). The presence of such variables suggests the dataset can be used for studies on health outcomes and their predictors.</li>
+            </ul>
+        </li>
+        <li><strong>Missing Data and Its Impact:</strong>
+            <ul>
+                <li>The significant amount of missing data, especially in variables like `adlp` and `urine`, needs to be addressed before conducting any robust statistical analysis. Imputation techniques or exclusion of certain variables might be necessary depending on the research question.</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+</div>
+
+</body>
+
+</html>
+    
