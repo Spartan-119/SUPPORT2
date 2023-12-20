@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Data Quality Assessment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
+        }
+
+        .highlight {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        table, th, td {
+            border: 1px solid #fff;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Basic Data Quality Assessment</h1>
+
+        <div class="highlight">
+            <p>Number of Rows: 9105</p>
+            <p>Number of Columns: 48</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Variable Name</th>
+                    <th>Role</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Missing Values</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>id</td>
+                    <td>ID</td>
+                    <td>Integer</td>
+                    <td>nan</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>age</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Age of the patients in years</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>death</td>
+                    <td>Target</td>
+                    <td>Continuous</td>
+                    <td>Death at any time up to National Death Index (NDI) data on 31 of December of 1994. Some patients are discharged before the end of the study and are not followed up. The authors looked up the information about death.</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>sex</td>
+                    <td>Feature</td>
+                    <td>Categorical</td>
+                    <td>Gender of the patient. Listed values are {male, female}.</td>
+                    <td>no</td>
+                </tr>
+                       
+        <tr>
+            <td>4</td>
+            <td>hospdead</td>
+            <td>Target</td>
+            <td>Binary</td>
+            <td>Death in hospital</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>slos</td>
+            <td>Other</td>
+            <td>Continuous</td>
+            <td>Days from Study Entry to Discharge</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>d.time</td>
+            <td>Other</td>
+            <td>Continuous</td>
+            <td>Days of follow-up</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>dzgroup</td>
+            <td>Feature</td>
+            <td>Categorical</td>
+            <td>The patient's disease sub category amongst ARF/MOSF w/Sepsis, CHF, COPD, Cirrhosis, Colon Cancer, Coma, Lung Cancer, MOSF w/Malig.</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>dzclass</td>
+            <td>Feature</td>
+            <td>Categorical</td>
+            <td>The patient's disease category amongst "ARF/MOSF", "COPD/CHF/Cirrhosis", "Cancer", "Coma".</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>num.co</td>
+            <td>Feature</td>
+            <td>Continuous</td>
+            <td>The number of simultaneous diseases (or comorbidities) exhibited by the patient. Values are ordinal with higher values indicating worse condition and chances of survival.</td>
+            <td>no</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>edu</td>
+            <td>Feature</td>
+            <td>Categorical</td>
+            <td>Years of education</td>
+            <td>yes</td>
+        </tr>
+        
+                <tr>
+                    <td>11</td>
+                    <td>income</td>
+                    <td>Feature</td>
+                    <td>Categorical</td>
+                    <td>Income of the patient. Listed values are {"$11-$25k", "$25-$50k", ">$50k", "under $11k"}.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>scoma</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>SUPPORT day 3 Coma Score based on Glasgow scale (predicted by a model).</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>charges</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Hospital charges</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>totcst</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Total ratio of costs to charges (RCC) cost</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>totmcst</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Total micro cost</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>avtisst</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Average TISS score, days 3-25, where Therapeutic Intervention Scoring System (TISS) is a method for calculating costs in the intensive care unit (ICU) and intermediate care unit (IMCU).</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>race</td>
+                    <td>Feature</td>
+                    <td>Categorical</td>
+                    <td>Race of the patient. Listed values are {asian, black, hispanic, missing, other, white}.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>sps</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>SUPPORT physiology score on day 3 (predicted by a model).</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>aps</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>APACHE III day 3 physiology score (no coma, imp bun,uout for ph1)</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>surv2m</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>SUPPORT model 2-month survival estimate at day 3 (predicted by a model)</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>surv6m</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>SUPPORT model 6-month survival estimate at day 3 (predicted by a model)</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>hday</td>
+                    <td>Feature</td>
+                    <td>Integer</td>
+                    <td>Day in hospital at which patient entered the study.</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>diabetes</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Whether the patient exhibits diabetes (Com 27-28, Dx 73) as a comorbidity (Y) or not (N).</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>dementia</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Whether the patient exhibits dementia (Comorbidity 6) as a comorbidity (Y) or not (N).</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>ca</td>
+                    <td>Feature</td>
+                    <td>Categorical</td>
+                    <td>Whether the patient has cancer (yes), whether it has spread out (metastatic), or if it is healthy (no).</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>prg2m</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Physician’s 2-month survival estimate for the patient.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>prg6m</td>
+                    <td>Feature</td>
+                    <td>Categorical</td>
+                    <td>Physician’s 6-month survival estimate for the patient.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>dnr</td>
+                    <td>Feature</td>
+                    <td>Categorical</td>
+                    <td>Whether the patient has a do not resuscitate (DNR) order or not. Possible values are dnr after sadm, dnr before sadm, missing, no dnr.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>29</td>
+                    <td>dnrday</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Day of DNR order (<0 if before the study)</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>meanbp</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Mean arterial blood pressure of the patient, measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+
+                <tr>
+                    <td>31</td>
+                    <td>wblc</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Counts of white blood cells (in thousands) measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>hrt</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Heart rate of the patient measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>resp</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Respiration rate of the patient measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>temp</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Temperature in Celsius degrees measured at day 3.</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>pafi</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>$PaO_2/FiO_2$ ratio measured at day 3. The ratio of arterial oxygen partial pressure (PaO2 in mmHg) to fractional inspired oxygen (FiO2 expressed as a fraction). Widely used clinical indicator of hypoxaemia, though its diagnostic utility is controversial. Specific ranges of values can be associated with different levels of mortality. May be worth considering binning these values according to some ranges: [link](https://litfl.com/pao2-fio2-ratio/)</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>alb</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Serum albumin levels measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>bili</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Bilirubin levels measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>crea</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Serum creatinine levels measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>sod</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Serum sodium concentration measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>ph</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Arterial blood pH. The pH of blood is usually between 7.35 and 7.45. Abnormal results may be due to lung, kidney, metabolic diseases, or medicines. Head or neck injuries or other injuries that affect breathing can also lead to abnormal results.</td>
+                    <td>yes</td>
+                </tr>
+
+                <tr>
+                    <td>41</td>
+                    <td>glucose</td>
+                    <td>Feature</td>
+                    <td>Integer</td>
+                    <td>Glucose levels measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>bun</td>
+                    <td>Feature</td>
+                    <td>Integer</td>
+                    <td>Blood urea nitrogen levels measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>43</td>
+                    <td>urine</td>
+                    <td>Feature</td>
+                    <td>Integer</td>
+                    <td>Urine output measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>44</td>
+                    <td>adlp</td>
+                    <td>Feature</td>
+                    <td>Categorical</td>
+                    <td>Index of Activities of Daily Living (ADL) of the patient, filled out by the patient. Higher values indicate more chance of survival, measured at day 3.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>45</td>
+                    <td>adls</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Index of Activities of Daily Living (ADL) of the patient, filled out by a surrogate (e.g. family member), measured at day 3. Higher values indicate more chance of survival.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>46</td>
+                    <td>sfdm2</td>
+                    <td>Target</td>
+                    <td>Categorical</td>
+                    <td>Level of functional disability of the patient in a 1-5 scale, with 5 being the highest severity. The values were obtained via questionnaires to the patient and/or surrogates to determine the Sickness Profile Impact (SIP). Values are correlated with ADLS, ADLP columns. Listed values are: {1: "no(Month 2 and SIP pres)", "adl>=4 (>=5 if sur)", "SIP>=30", "Coma or Intub", 5: "<2 mo. follow-up"}. There are 159 patients surviving 2 months for whom there were no patient or surrogate interviews. These patients have missing sfdm2.</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>47</td>
+                    <td>adlsc</td>
+                    <td>Feature</td>
+                    <td>Continuous</td>
+                    <td>Imputed ADL Calibrated to Surrogate.</td>
+                    <td>no</td>
+                </tr>
+
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+
+</html>
